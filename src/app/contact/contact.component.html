@@ -1,0 +1,120 @@
+<section id="contact" class="contact-section" #section>
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="contac-header">
+      <h2>Construyamos Algo Juntos</h2>
+      <p>
+        ¿Tienes un proyecto en mente o deseas contratar servicios?
+        Estoy disponible para nuevas oportunidades.
+      </p>
+    </div>
+
+    <div class="content">
+
+      <!-- INFO -->
+      <div class="info">
+        <h3>Información de Contacto</h3>
+        <p>
+          No dudes en contactarme directamente por correo 
+          electrónico o seguir mi trabajo en redes sociales. 
+          Suelo responder en menos de 24 horas.
+        </p>
+
+        <ul>
+          <li>
+            <div class="icon email">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <small>Email</small>
+              <strong>davidalbino0319&#64;gmail.com</strong>
+            </div>
+          </li>
+
+          <li>
+            <div class="icon location">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <small>Ubicación</small>
+              <strong>Remoto / Barranquilla, Colombia</strong>
+            </div>
+          </li>
+
+          <li>
+            <div class="icon status">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+              <small>Estado</small>
+              <strong class="available">Disponible para nuevos proyectos</strong>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- FORM -->
+      <form class="form" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+
+        <div class="row">
+          <div class="field">
+            <label>Nombre</label>
+            <input formControlName="name" />
+            <small *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+              Nombre mínimo 5 caracteres
+            </small>
+          </div>
+
+          <div class="field">
+            <label>Apellido</label>
+            <input formControlName="lastname" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input formControlName="email" />
+          <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+            Email no válido
+          </small>
+        </div>
+
+        <div class="field">
+          <label>Empresa / Compañia</label>
+          <input formControlName="company" />
+        </div>
+
+        <div class="field">
+          <label>telefono</label>
+          <input formControlName="phone" type="number" />
+        </div>
+
+        <div class="field">
+          <label>Mensaje</label>
+          <textarea rows="5" formControlName="message"></textarea>
+          <small *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+            Mensaje mínimo 10 caracteres
+          </small>
+        </div>
+
+        <div class="actions">
+          <button type="submit">
+            <i class="fa-solid fa-envelope"></i>
+            Enviar 
+          </button>
+  
+          <button
+            type="button"
+            class="btn-whatsapp"
+            (click)="sendWhatsApp()"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            WhatsApp
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>

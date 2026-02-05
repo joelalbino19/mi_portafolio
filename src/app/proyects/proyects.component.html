@@ -1,0 +1,58 @@
+<section id="projects" class="projects">
+  <div class="container_projects">
+    <div class="projects-header">
+      <div>
+        <h2>Proyectos Destacados</h2>
+        <p>
+          Una selección curada de aplicaciones web escalables, arquitecturas de
+          backend robustas y soluciones móviles innovadoras.
+        </p>
+      </div>
+  
+      <div class="projects-stats">
+        <div class="stat">
+          <span class="number">+10</span>
+          <span class="label">Proyectos</span>
+        </div>
+        <div class="divider"></div>
+        <div class="stat">
+          <span class="number">+4</span>
+          <span class="label">Años Exp.</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Filtros -->
+    <!-- <div class="projects-filters">
+      <button class="filter active" data-filter="all">Todos</button>
+      <button class="filter" data-filter="web">Web Apps</button>
+      <button class="filter" data-filter="mobile">Mobile</button>
+      <button class="filter" data-filter="backend">Backend & API</button>
+      <button class="filter" data-filter="devops">DevOps</button>
+    </div> -->
+  
+    <!-- Grid -->
+    <div class="projects-grid">
+      <div
+        class="project-card"
+        *ngFor="let project of projects"
+      >
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title" />
+        </div>
+  
+        <div class="project-content">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+  
+          <div class="project-tech">
+            <span *ngFor="let tech of project.tech">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,125 @@
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    #0b1220 0%,
+    #0e1627 100%
+  );
+  text-align: center;
+  padding: 0 24px;
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: 6px 14px;
+    // margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0284c7;
+    background-color: #e0f2fe;
+    border-radius: 999px;
+  }
+
+  &__title {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 24px;
+
+    .highlight {
+      color: #0284c7;
+    }
+  }
+
+  &__description {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d2d3d3;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background-color: #0284c7;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #0369a1;
+    transform: translateY(-1px);
+  }
+
+  .arrow {
+    font-size: 18px;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover .arrow {
+    transform: translateX(4px);
+  }
+}
+
+.btn-outline {
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  background-color: #ffffff;
+
+  &:hover {
+    border-color: #0284c7;
+    color: #0284c7;
+    background-color: #f8fafc;
+  }
+}
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icono Mail (SVG embebido, sin librerías) */
+.icon-mail {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 8l9 6 9-6M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z' /%3E%3C/svg%3E")
+    no-repeat center / contain;
+}
+
+
+// @media (max-width: 1023px) {
+//   .header__description {
+//     text-align: justify;
+//   }
+
+// }

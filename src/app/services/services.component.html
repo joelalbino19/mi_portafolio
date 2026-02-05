@@ -1,0 +1,59 @@
+<section id="services" class="services-section">
+  <div class="container">
+
+    <header class="section-header">
+      <h2>Servicios & Soluciones</h2>
+      <p>
+        Transformo necesidades de negocio en soluciones digitales 
+        robustas. Mi enfoque combina excelencia técnica con una 
+        visión orientada a resultados comerciales tangibles.
+      </p>
+    </header>
+
+    <div class="services-grid">
+      <article
+        class="service-card"
+        *ngFor="let service of services"
+        #serviceCard
+      >
+        <div class="icon">
+          <i class="fas" [ngClass]="service.icon"></i>
+        </div>
+
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+
+        <div class="project-tech">
+            <span *ngFor="let tech of service.tech">
+              {{ tech }}
+            </span>
+          </div>
+      </article>
+    </div>
+
+  </div>
+  
+  <div class="cta-section">
+    <div class="cta-container">
+  
+      <div class="cta-icon" #rocket>
+        <i class="fa-solid fa-jet-fighter"></i>
+      </div>
+  
+      <h2>¿Listo para transformar tu negocio?</h2>
+  
+      <p>
+        Hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos tecnológicos
+        con una solución robusta y a medida.
+      </p>
+  
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-primary">
+          Solicitar Cotización
+        </a>
+      </div>
+  
+    </div>
+  </div>
+
+</section>

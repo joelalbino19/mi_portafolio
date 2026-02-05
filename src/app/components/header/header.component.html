@@ -1,0 +1,38 @@
+<header class="header" [class.scrolled]="isScrolled" >
+  <div class="header__container">
+
+    <!-- Logo -->
+    <div class="header__logo">
+      <div class="logo-icon">JA</div>
+
+      <div class="logo-dev">
+        <span class="tag">&lt;</span>
+        <span class="text">Dev</span>
+        <span class="tag">/&gt;</span>
+      </div>
+    </div>
+
+    <nav class="header__nav">
+      <a
+        *ngFor="let link of links"
+        (click)="scrollTo(link.id)"
+        [class.active]="activeSection === link.id"
+      >
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <!-- Action -->
+    <div class="header__action">
+      <a
+        class="btn-cv"
+        href="/cv/Hoja_de_Vida joel.pdf"
+        download
+      >
+        Descargar CV
+        <i class="icon-download"></i>
+      </a>
+    </div>
+
+  </div>
+</header>
